@@ -5,7 +5,7 @@
 
 
 ## wireframe
-<img src= Notes_221013_141815.jpg>
+<img src= img/Notes_221013_141815.jpg>
 
 ### pseudocode
 ```
