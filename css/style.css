@@ -1,9 +1,12 @@
 h1 {
     text-align: center;
+    font-family: 'Silkscreen', cursive;
+    font-size: 70px;
 }
 .container {
     padding: 5px;
-    height: 100vh;
+    height: 80vh;
+    width: 67vh;
     display: grid;
     align-items: center;
     flex-direction:column; 

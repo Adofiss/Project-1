@@ -1,7 +1,7 @@
-# GAME (minesweaper)
+# GAME (minesweeper)
 
 ## background
--game choice: minesweaper
+-game choice: minesweeper
 
 
 ## wireframe
