@@ -48,16 +48,18 @@ button:hover {
     color: rgba(82, 82, 152, 0.5);
 }
 
+.box-back {
+    background-color: black;
+}
+
+
 #a1 {
     grid-area: 1 / 1 / 2 / 2;
     height: 160px;
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -67,10 +69,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -80,10 +79,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -93,10 +89,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -106,10 +99,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -119,10 +109,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -132,10 +119,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -145,10 +129,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -158,10 +139,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -171,10 +149,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -185,10 +160,7 @@ button:hover {
     display: flex;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -199,10 +171,7 @@ button:hover {
     display: flex;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -213,10 +182,7 @@ button:hover {
     display: flex;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -227,10 +193,7 @@ button:hover {
     display: flex;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -241,10 +204,7 @@ button:hover {
     display: flex;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -255,10 +215,7 @@ button:hover {
     display: flex;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -268,10 +225,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -281,10 +235,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -294,10 +245,7 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
 }
 
@@ -307,9 +255,18 @@ button:hover {
     width: 110px;
     color: burlywood;
     font-size: 120px;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-left: 10px solid;
-    border-top: 10px solid;
+    border: 5px solid;
     border-radius: 4px;
+}
+
+.container.mark {
+    background: #fea;
+}
+
+.conatiner.reveal {
+    background: #f7f7f7;
+}
+
+.container.boom {
+    background: #f00;
 }
