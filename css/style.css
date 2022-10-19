@@ -1,9 +1,10 @@
-body{
-    background-color: rgba(82, 82, 152, 0.5);
+h1 {
+    color: white;
+    font-family: 'Silkscreen', cursive;
 }
 
-h2, h3{
-    color: whitesmoke;
+h3 {
+    color: white;
     font-family: 'Silkscreen', cursive;
 }
 
@@ -31,12 +32,12 @@ button {
     width: 100px;
     height: 50px;
     background-color:rgba(82, 82, 152, 0.5);
-    color: black;
+    color: white;
     font-weight: bolder;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 20px;
 }
 
 button:hover {
-    background: hotpink;
+    background: white;
     color: rgba(82, 82, 152, 0.5);
 }
