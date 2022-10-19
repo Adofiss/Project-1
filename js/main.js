@@ -1,9 +1,9 @@
 /*----- constants -----*/
 //create grid, define bomb character,
 const components = {
-    num_of_rows : 3,
-    num_of_columns : 3,
-    num_of_bombs : 1,
+    num_of_rows : 6,
+    num_of_columns : 6,
+    num_of_bombs : 5,
     bomb : '💣',
     alive : true,
 }
