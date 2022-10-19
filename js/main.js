@@ -1,144 +1,152 @@
 /*----- constants -----*/
+//create grid, define bomb character,
+const components = {
+    num_of_rows : 3,
+    num_of_columns : 3,
+    num_of_bombs : 1,
+    bomb : '💣',
+    alive : true,
+}
+// create table and place bombs
+function startGame() {
+    components.bombs = placeBombs();
+    document.getElementById('layout').appendChild(createTable());
+}
 
-const box = document.querySelector('.container')
+//run loop to place bombs box by box
 
-const reset = document.querySelector('#resetBtn')
+function placeBombs() {
+    let i, rows = [];
+    
+    for (i=0; i<components.num_of_bombs; i++) {
+        placeSingleBomb(rows);
+    }
+    return rows;
+} 
 
-let boxes = document.querySelectorAll(".box")
-let spaces = Array(20).fill(null)
-/*----- app's state (variables) -----*/
+// randomize bomb placement by using Math.random
+
+function placeSingleBomb(bombs) {
+
+    let nrow, ncol, row, col;
+    nrow = Math.floor(Math.random() * components.num_of_rows);
+    ncol = Math.floor(Math.random() * components.num_of_columns);
+    row = bombs[nrow];
+    
+    if (!row) {
+        row = [];
+        bombs[nrow] = row;
+    }
+    
+    col = row[ncol];
+    
+    if (!col) {
+        row[ncol] = true;
+        return
+    } 
+    else {
+        placeSingleBomb(bombs);
+    }
+}
+
+// run loop to create table according to initial dictionary
+
+function cellID(i, j) {
+    return 'cell-' + i + '-' + j;
+}
+
+function createTable() {
+    let table, row, td, i, j;
+    table = document.createElement('table');
+    
+    for (i=0; i<components.num_of_rows; i++) {
+        row = document.createElement('tr');
+        for (j=0; j<components.num_of_columns; j++) {
+            td = document.createElement('td');
+            td.id = cellID(i, j);
+            row.appendChild(td);
+            addCellListeners(td, i, j);
+        }
+        table.appendChild(row);
+    }
+    return table;
+}
+
+function addCellListeners(td, i, j) {
+    td.addEventListener('mousedown', function(event) {
+        if (!components.alive) {
+            return;
+        }
+        components.mousewhiches += event.which;
+        if (event.which === 3) {
+            return;
+        }
+        this.style.backgroundColor = 'hotpink';
+    });
+
+    td.addEventListener('mouseup', function(event) {
+      
+        if (!components.alive) {
+            return;
+        }
 
 
+        components.mousewhiches = 0;
+        
+        if (event.which === 3) {
+           
+            if (this.clicked) {
+                return;
+            }
 
-/*----- cached element references -----*/
-/*----- event listeners -----*/
+            event.preventDefault();
+            event.stopPropagation();
+          
+            return false;
+        } 
+        else {
+            handleCellClick(this, i, j);
+        }
+    });
 
-box.addEventListener('click', onBoxClicked);
+    td.oncontextmenu = function() { 
+        return false; 
+    };
+}
+
+//using if/else statements define how game reacts (bomb or no bomb)
+
+function handleCellClick(cell, i, j) {
+    if (!components.alive) {
+        return;
+    }
 
 
-reset.addEventListener('click', onResetClicked);
+    cell.clicked = true;
 
-
-
-/*----- functions -----*/
-
-function onBoxClicked (event){
-    console.log(event.target)
-    event.target.classList.remove('box-back')
+    if (components.bombs[i][j]) {
+        cell.style.color = 'red';
+        cell.textContent = components.bomb;
+        gameOver();
+        
+    }
 }
 
 
-
-
-function onResetClicked (event){
-    console.log(event.target)
-    event.target.classList.
+function gameOver() {
+    components.alive = false;
+    document.getElementById('lost').style.display="block";
     
 }
 
-
-console.log("i AM Here");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function cell(row, column, opened, mined) {
-    return {
-        id: row + "" + column,
-        row: row,
-        column: column,
-        opened: opened,
-        mined: mined,
-    }
-}
-
-function board(boardSize, mineCount){
-        let board = {};
-        for(var row = 0; row < boardSize; row++){
-                for(var column = 0; column < boardSize; column++){
-            board[row + "" + column] = cell(row, column, false, false, false, 0);
-        }
-    }
-    board = randomlyAssignMines( board, mineCount);
-    board = calculateNeighborMineCounts( board, boardSize);
-    return board;
+function reload(){
+    window.location.reload();
 }
 
 
+// start game when page loads
 
-function check(x1, y1) {
-    if((x1>=0)&&(y1>0)&&(x1<columns)&&(y1<rows))
-    return board[x1+y1*columns];
-
-}
-
-function picture(index){
-    return tile[index].src.substr(tile[index].src.length-5,1);
-}
-
-function inint(){
-    document.getElementById('status').innerHTML=('Click on tiles to reveal them');
-    mines = 5;
-    rows = 4;
-    columns = 5;
-    remaining = mines;
-    tile = [];
-    board = [];
-    revealed = 0;
-    for (i=0; i<rows*columns; i++){
-        tile[i] = document.createElement('img');
-        tile[i].src = "x.png";
-        tile[i].id = i;
-        document.body.appendChild(tile[i]);
-
-    }
-}
-
-placed = 0;
-do{
-    i = math.floor(Math.random()*columns*rows);
-    if(board[i]!='mine'){
-        board[i] = 'mine';
-        placed++;
-    }
-} while (placed<mines);
-
-for(var x = 0; x<columns; x++)
-for(y=0; y<rows+1; y++){
-    if(check(x,y)!='mine'){
-        board[x+y*columns]=
-        ((check(x,y+1)=='mine')|0)
-        +((check(x-1,y+1)=='mine')|0)       
-        +((check(x+1,y+1)=='mine')|0)       
-        +((check(x,y-1)=='mine')|0)        
-        +((check(x-1,y-1)=='mine')|0)       
-        +((check(x+1,y-1)=='mine')|0)        
-        +((check(x-1,y)=='mine')|0)        
-        +((check(x+1,y)=='mine')|0);         
-        }
-   }
-
-   function click (event){
-    var source = event.target;
-    id = source.id;
-    if(event.which==3){
-        switch(picture(id)){
-            case 'x':
-        }
-    }
-   }
+window.addEventListener('load', function() {
+    document.getElementById('lost').style.display="none";
+    startGame();
+});

@@ -28,30 +28,16 @@
 </head>
 
 <body>
-    <h1 class="animate__animated animate__flip">MINESWEEPER</h1>
-    <div class="container">
-        <div class="box box-back" id="a1"> 💣</div>
-        <div class="box box-back" id="a2"></div>
-        <div class="box box-back" id="a3"></div>
-        <div class="box box-back" id="a4"></div>
-        <div class="box box-back" id="a5"></div>
-        <div class="box box-back" id="a6"></div>
-        <div class="box box-back" id="a7"></div>
-        <div class="box box-back" id="a8">💣</div>
-        <div class="box box-back" id="a9"></div>
-        <div class="box box-back" id="a10">💣</div>
-        <div class="box box-back" id="a11"></div>
-        <div class="box box-back" id="a12"></div>
-        <div class="box box-back" id="a13"></div>
-        <div class="box box-back" id="a14"></div>
-        <div class="box box-back" id="a15">💣</div>
-        <div class="box box-back" id="a16">💣</div>
-        <div class="box box-back" id="a17"></div>
-        <div class="box box-back" id="a18"></div>
-        <div class="box box-back" id="a19"></div>
-        <div class="box box-back" id="a20"> </div>
+    <div id="box">
+       <h2>MINESWEEPER!</h2><hr><br><br>
+          <div id="layout"></div>
+          <br>
+        <div id="lost" style="display: none;">
+          <h3>WASTED!</h3>
+          <button id="new-game-button" type="button" onclick="reload()">NEW GAME</button>
+        </div>  
+        <p id="countdown"></p>       
     </div>
-    <button id="resetBtn">RESET</button>
 </body>
 
 </html>
