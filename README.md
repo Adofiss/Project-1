@@ -32,7 +32,7 @@ title: A-Simple-Minesweeper-Game
 -add timer
 
 ## display
-<img src= img/Screen_Shot>
+<img src= img/Screen_Shot.jpg>
 
 ## getting Started
 - start by pressing any cell in the box
