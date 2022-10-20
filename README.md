@@ -1,5 +1,6 @@
 # GAME (minesweeper)
-title: A-Simple-Minesweeper-Game
+title: A-Simple-Minesweeper-Game \n
+
 link: https://adofiss.github.io/Project-1/
 
 ## background
