@@ -1,11 +1,11 @@
 /*----- constants -----*/
 //create grid, define bomb character,
 const components = {
-    num_of_rows : 6,
-    num_of_columns : 6,
-    num_of_bombs : 5,
-    bomb : '💣',
-    alive : true,
+    num_of_rows: 6,
+    num_of_columns: 6,
+    num_of_bombs: 5,
+    bomb: '💣',
+    alive: true,
 }
 // create table and place bombs
 function startGame() {
@@ -17,12 +17,12 @@ function startGame() {
 
 function placeBombs() {
     let i, rows = [];
-    
-    for (i=0; i<components.num_of_bombs; i++) {
+
+    for (i = 0; i < components.num_of_bombs; i++) {
         placeSingleBomb(rows);
     }
     return rows;
-} 
+}
 
 // randomize bomb placement by using Math.random
 
@@ -32,18 +32,18 @@ function placeSingleBomb(bombs) {
     nrow = Math.floor(Math.random() * components.num_of_rows);
     ncol = Math.floor(Math.random() * components.num_of_columns);
     row = bombs[nrow];
-    
+
     if (!row) {
         row = [];
         bombs[nrow] = row;
     }
-    
+
     col = row[ncol];
-    
+
     if (!col) {
         row[ncol] = true;
         return
-    } 
+    }
     else {
         placeSingleBomb(bombs);
     }
@@ -58,10 +58,10 @@ function cellID(i, j) {
 function createTable() {
     let table, row, td, i, j;
     table = document.createElement('table');
-    
-    for (i=0; i<components.num_of_rows; i++) {
+
+    for (i = 0; i < components.num_of_rows; i++) {
         row = document.createElement('tr');
-        for (j=0; j<components.num_of_columns; j++) {
+        for (j = 0; j < components.num_of_columns; j++) {
             td = document.createElement('td');
             td.id = cellID(i, j);
             row.appendChild(td);
@@ -73,7 +73,7 @@ function createTable() {
 }
 
 function addCellListeners(td, i, j) {
-    td.addEventListener('mousedown', function(event) {
+    td.addEventListener('mousedown', function (event) {
         if (!components.alive) {
             return;
         }
@@ -84,33 +84,33 @@ function addCellListeners(td, i, j) {
         this.style.backgroundColor = 'hotpink';
     });
 
-    td.addEventListener('mouseup', function(event) {
-      
+    td.addEventListener('mouseup', function (event) {
+
         if (!components.alive) {
             return;
         }
 
 
         components.mousewhiches = 0;
-        
+
         if (event.which === 3) {
-           
+
             if (this.clicked) {
                 return;
             }
 
             event.preventDefault();
             event.stopPropagation();
-          
+
             return false;
-        } 
+        }
         else {
             handleCellClick(this, i, j);
         }
     });
 
-    td.oncontextmenu = function() { 
-        return false; 
+    td.oncontextmenu = function () {
+        return false;
     };
 }
 
@@ -128,25 +128,63 @@ function handleCellClick(cell, i, j) {
         cell.style.color = 'red';
         cell.textContent = components.bomb;
         gameOver();
-        
+
     }
 }
 
 
 function gameOver() {
     components.alive = false;
-    document.getElementById('lost').style.display="block";
-    
+    document.getElementById('lost').style.display = "block";
+
 }
 
-function reload(){
+function reload() {
     window.location.reload();
 }
 
 
 // start game when page loads
 
-window.addEventListener('load', function() {
-    document.getElementById('lost').style.display="none";
+window.addEventListener('load', function () {
+    document.getElementById('lost').style.display = "none";
     startGame();
 });
+
+// add timer
+
+window.onload = () => {
+    let hour = 0;
+    let minute = 0;
+    let seconds = 0;
+    let totalSeconds = 0;
+
+    let intervalId = null;
+
+    intervalId = setInterval(startTimer, 1000);
+    function startTimer() {
+        ++totalSeconds;
+        hour = Math.floor(totalSeconds / 3600);
+        minute = Math.floor((totalSeconds - hour * 3600) / 60);
+        seconds = totalSeconds - (hour * 3600 + minute * 60);
+
+        document.getElementById("hour").innerHTML = `${hour}:`;
+        document.getElementById("minute").innerHTML = `${minute}:`;
+        document.getElementById("seconds").innerHTML = seconds;
+    }
+
+
+
+    document.getElementById('Displplaytimetaken').addEventListener('click', () => {
+        document.getElementById("timetaken").innerHTML = minute + "minutes" + seconds + "seconds";
+        reset();
+    });
+
+    function reset() {
+        totalSeconds = 0;
+        document.getElementById("hour").innerHTML = '0';
+        document.getElementById("minute").innerHTML = '0';
+        document.getElementById("seconds").innerHTML = '0';
+    }
+
+}
