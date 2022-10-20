@@ -3,7 +3,7 @@
 const components = {
     num_of_rows: 10,
     num_of_columns: 10,
-    num_of_bombs: 5,
+    num_of_bombs: 30,
     bomb: '💣',
     alive: true,
 }
