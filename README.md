@@ -1,24 +1,40 @@
 # GAME (minesweeper)
+title: A-Simple-Minesweeper-Game
 
 ## background
--game choice: minesweeadofper
+-technologies used
+ - HTML
+ -CSS
+ -JavaScript
+ -Bootstrap
+ -Google-Fonts
+ -Animate.style
 
 
 ## wireframe
 <img src= img/Notes_221013_141815.jpg>
 
-### pseudocode
-```
-function makeChoice(choice){
-    - grab choice data from button user presses
-    - store the data in a avariable representing players choices.
-}
- function checkChoices(p1Choice) {
-    - store each p1 choices
-    - if (p1 presses empty box) {
-        player gets point
-    } else if (p1 presses bomb box) {
-        player losses
-    }
- }
-```
+
+## pseudocode
+-create grid
+ -number of rows
+ -number of columns
+ -bomb
+-define the mine/bomb
+-create grid and place bombs
+-run loops to place box cell by call
+ -use for each method
+-randomize bomb/ mine placement
+ -use math.random 
+-define what the click function does
+-write a win condition and lose condition
+ - have win display and lose display linked to javascript
+-add timer
+
+## display
+<img src= img/Screen_Shot>
+
+## getting Started
+- start by pressing any cell in the box
+- if cell has no bomb/mine you can continue to press more cells until a bomb/mine is clicked.
+- once a bomb/mine is clicked it goes off and triggers a game over function requiring the player to start a new game.

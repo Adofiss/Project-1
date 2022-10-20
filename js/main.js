@@ -1,8 +1,8 @@
 /*----- constants -----*/
 //create grid, define bomb character,
 const components = {
-    num_of_rows: 6,
-    num_of_columns: 6,
+    num_of_rows: 10,
+    num_of_columns: 10,
     num_of_bombs: 5,
     bomb: '💣',
     alive: true,
@@ -129,6 +129,11 @@ function handleCellClick(cell, i, j) {
         cell.textContent = components.bomb;
         gameOver();
 
+    } else {
+        cell.stle.color = 'hotpink';
+        cell.textContent = components;
+        gameWon();
+
     }
 }
 
@@ -136,6 +141,12 @@ function handleCellClick(cell, i, j) {
 function gameOver() {
     components.alive = false;
     document.getElementById('lost').style.display = "block";
+
+}
+
+function gameWon() {
+    components.alive = true;
+    document.getElementById('won').style.display = "block";
 
 }
 
