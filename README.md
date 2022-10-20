@@ -38,3 +38,9 @@ title: A-Simple-Minesweeper-Game
 - start by pressing any cell in the box
 - if cell has no bomb/mine you can continue to press more cells until a bomb/mine is clicked.
 - once a bomb/mine is clicked it goes off and triggers a game over function requiring the player to start a new game.
+
+## future enhancments
+- add flag function
+-have all mines reveal themselves once game is over
+-add different levels
+-add numbers and score keeping features
